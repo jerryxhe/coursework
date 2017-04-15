@@ -1,0 +1,2840 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Oct 22 2009
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y\sim N_{n}(0,\,\sigma^{2}I)$
+\end_inset
+
+, 
+\begin_inset Formula $A_{1},...,A_{k}$
+\end_inset
+
+ 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ symmetric
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mbox{rank}\left(A_{i}\right)=r_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\begin{cases}
+A_{1}+\cdots+A_{k} & =I\\
+r_{1}+\cdots+r_{k} & =n\end{cases}$
+\end_inset
+
+, 
+\begin_inset Formula $I=P_{0}+(P-P_{0})+(I-P)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Last time, we showed that 
+\begin_inset Formula $A_{i}^{2}=A_{i}$
+\end_inset
+
+and 
+\begin_inset Formula $A_{j}A_{i}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, 
+\begin_inset Formula $s=A_{1},...,A_{k}$
+\end_inset
+
+represent orthogonal projections onto orthogonal subspaces.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $M(t_{1},\dots,t_{k})$
+\end_inset
+
+ denote the mgf of 
+\begin_inset Formula $\frac{1}{\sigma^{2}}\left(Y^{T}A_{1}Y,\,\dots,\, Y^{T}A_{k}Y\right)$
+\end_inset
+
+ and let 
+\begin_inset Formula $M_{i}(t)$
+\end_inset
+
+denote the mgf of 
+\begin_inset Formula $\frac{1}{\sigma^{2}}Y^{T}A_{i}Y$
+\end_inset
+
+.
+ It is important to note that for sufficiently small 
+\begin_inset Formula $\left|t_{1}\right|,\left|t_{2}\right|,\dots,\left|t_{k}\right|$
+\end_inset
+
+ the matrices 
+\begin_inset Formula $I-2t_{1}A_{1}-\cdots-2t_{k}A_{k}$
+\end_inset
+
+ and each 
+\begin_inset Formula $I-2t_{i}A_{i}$
+\end_inset
+
+ are positive definite.
+ 
+\end_layout
+
+\begin_layout Section*
+Oct 27 2009
+\end_layout
+
+\begin_layout Standard
+Under slightly stronger conditions for 
+\begin_inset Formula $r,s=1,...,d$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+Cov_{\theta}\left\{ U_{r}(\theta),U_{s}(\theta)\right\}  & = & \mathbb{E}_{\theta}[\frac{\partial}{\partial\theta_{r}}l(\theta;y)\frac{\partial}{\partial\theta_{s}}l(\theta;y)]\\
+ & = & -\mathbb{E}\left[\frac{\partial^{2}l}{\partial\theta_{r}\partial\theta_{s}}(\theta;y)\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus the covariance matrix of 
+\begin_inset Formula $U(\theta)$
+\end_inset
+
+ is 
+\begin_inset Formula $i(\theta)=-\mathbb{E}_{\theta}[\nabla_{\theta}\nabla_{\theta}^{T}l(\theta)]$
+\end_inset
+
+ and is called 
+\emph on
+Fisher information matrix
+\emph default
+; 
+\begin_inset Formula $j(\theta)=-\nabla_{\theta}\nabla_{\theta}^{T}l(\theta)$
+\end_inset
+
+ is called the 
+\emph on
+observed information matrix
+\emph default
+.
+ (To get a confidence interval: likelihood ratio statistic, asymptotic statistic
+, distribution of score statistic)
+\end_layout
+
+\begin_layout Standard
+The likelihood function is 
+\emph on
+parametrisation invariant 
+\emph default
+if 
+\begin_inset Formula $\psi=\psi(\theta)$
+\end_inset
+
+ is a (smooth) reparametrisation with inverse 
+\begin_inset Formula $\theta=\theta(\psi)$
+\end_inset
+
+, then 
+\begin_inset Formula $\psi$
+\end_inset
+
+ in the 
+\begin_inset Formula $\psi$
+\end_inset
+
+- parametrisation and 
+\begin_inset Formula $\theta=\theta(\psi)$
+\end_inset
+
+ (in the 
+\begin_inset Formula $\theta$
+\end_inset
+
+- parametrisation index the same distribution.
+
+\emph on
+ So 
+\begin_inset Formula $L^{\psi}(y)=L^{\theta}(\theta(\psi))$
+\end_inset
+
+.
+ 
+\emph default
+In particular, the MLEs both identify the same distribution, so 
+\begin_inset Formula $\hat{\psi}=\psi(\hat{\theta})$
+\end_inset
+
+.
+ This is called the equivariance property of MLEs.
+ 
+\end_layout
+
+\begin_layout Standard
+The score function and Fisher information matrix, however, both depend on
+ the parametrisation.
+ For 
+\begin_inset Formula $a=1,..,d$
+\end_inset
+
+
+\begin_inset Formula \[
+U_{a}^{\psi}(\psi)=\frac{\partial l^{\psi}}{\partial\psi_{a}}(\psi)=\frac{\partial}{\partial\psi_{a}}l^{\theta}(\theta(\psi))=\sum_{r=1}^{d}\frac{\partial l^{\theta}}{\partial\theta_{r}}(\theta(y))\frac{\partial\theta_{r}}{\partial\psi_{a}}=\sum_{r=1}^{d}U_{r}^{\theta}(\theta(\psi))\frac{\partial\theta_{r}}{\partial\psi_{a}}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words, 
+\begin_inset Formula $U^{\psi}(\psi)=\left(\frac{\partial\theta}{\partial\psi}\right)^{T}U^{\theta}(\theta(\psi))$
+\end_inset
+
+ where the Jacobian matrix 
+\begin_inset Formula $\left(\frac{\partial\theta}{\partial\psi}\right)$
+\end_inset
+
+ has 
+\begin_inset Formula $\left(r,a\right)$
+\end_inset
+
+-th component 
+\begin_inset Formula $\frac{\partial\theta_{r}}{\partial\psi_{a}}$
+\end_inset
+
+.
+ Similarly, 
+\begin_inset Formula $i^{\psi}(\psi)=\left(\frac{\partial\theta}{\partial\psi}\right)^{T}i^{\theta}(\theta(\psi))\left(\frac{\partial\theta}{\partial\psi}\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+2.2 Asymptotic properties of MLE
+\end_layout
+
+\begin_layout Standard
+(in the definition, change to open interval)
+\end_layout
+
+\begin_layout Standard
+In this section, we assume that 
+\begin_inset Formula $Y=(Y_{1},...,Y_{n})^{T}$
+\end_inset
+
+ has i.i.d components.
+ Let 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+denote the true value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and impose the following additional restrictions on the model from the
+ previous section: 
+\end_layout
+
+\begin_layout Standard
+(1) 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ is closed and bounded
+\end_layout
+
+\begin_layout Standard
+(2) For each 
+\begin_inset Formula $y\in E$
+\end_inset
+
+, the likelihood 
+\begin_inset Formula $L(\theta;y)$
+\end_inset
+
+ is a continuous function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(3) For each 
+\begin_inset Formula $y\in E$
+\end_inset
+
+, the maximiser of 
+\begin_inset Formula $L(\theta;y)$
+\end_inset
+
+ (which exists by (1) and (2)) is assumed to be unique and we denote it
+ by 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+.
+ [Lemma A3 of Potcher and Prucha (1997) shows that 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ is a measurable function of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ ]
+\end_layout
+
+\begin_layout Standard
+(4) The model is identifiable: if 
+\begin_inset Formula $\theta\neq\theta'$
+\end_inset
+
+, then there exists some 
+\begin_inset Formula $A\in\mathcal{E}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $\int_{A}f_{Y}(y;\theta)d\mu(y)\neq\int_{A}f_{Y}(y;\theta')d\mu(y)$
+\end_inset
+
+.
+ Not an identifiable model: 
+\begin_inset Formula $Y_{ij}=\mu+\theta_{i}+\epsilon_{ij}$
+\end_inset
+
+(need to impose 
+\begin_inset Formula $\theta_{1}=0$
+\end_inset
+
+ for identifiability).
+ 
+\end_layout
+
+\begin_layout Standard
+(5) 
+\begin_inset Formula $\mathbb{E}_{\theta_{0}}\left\{ \sup_{\theta\in\Theta}\left|\log f(y;\theta)\right|\right\} <\infty$
+\end_inset
+
+; where 
+\begin_inset Formula $f(\cdot;\theta)=f_{Y_{1}}(\cdot;\theta)$
+\end_inset
+
+.
+ Write 
+\begin_inset Formula $\bar{l}_{n}\left(\theta\right)=\frac{1}{n}\sum_{i=1}^{n}\log f(y_{i};\theta)$
+\end_inset
+
+ for the normalised (empirical), and 
+\begin_inset Formula $\bar{l}(\theta)=\mathbb{E}_{\theta_{0}}\left\{ \log f(y;\theta)\right\} $
+\end_inset
+
+ for th expected log-likelihood.
+\end_layout
+
+\begin_layout Theorem
+Under Conditions (1)-(5) 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ is consistent, i.e.
+ 
+\begin_inset Formula $\hat{\theta}_{n}\to\theta_{0}$
+\end_inset
+
+ as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+By Jensen's inequality (and condition (5))
+\begin_inset Formula \[
+\bar{l}(\theta)-\bar{l}(\theta_{0})=\mathbb{E}_{\theta_{0}}\left\{ \log\frac{f(Y_{i},\theta)}{f(Y_{i},\theta_{0})}\right\} \leq\log\mathbb{E}_{\theta_{0}}\left\{ \frac{f(Y_{i},\theta)}{f(Y_{i},\theta_{0})}\right\} =0\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+we have equality iff 
+\begin_inset Formula $\mathbb{P}_{\theta_{0}}\left\{ f(Y_{i};\theta)=f(Y_{i};\theta_{0})\right\} =1$
+\end_inset
+
+, but by the identifiability condition (4), this means 
+\begin_inset Formula $\theta=\theta_{0}$
+\end_inset
+
+.
+ hence 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ is the unique maximiser of 
+\begin_inset Formula $\bar{l}(\cdot)$
+\end_inset
+
+.
+ By condition (5), the function 
+\begin_inset Formula $\bar{l}(\theta)$
+\end_inset
+
+ is continuous (an application of the dominated convergence theorem), so
+ it attains its bounds on any closed, bounded set.
+ In particular, given 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula $\exists\delta>0$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $\bar{l}(\theta)-\bar{l}(\theta_{0})\geq\delta$
+\end_inset
+
+ whenever 
+\begin_inset Formula $\left\Vert \hat{\theta}_{n}-\theta_{0}\right\Vert \geq\epsilon$
+\end_inset
+
+.
+ Under condition (5), we prove (c.f.
+ Nonparametric Statistical Theory) that 
+\begin_inset Formula \[
+\sup_{\theta\in\Theta}\left|\hat{l}_{n}\left(\theta\right)-\hat{l}(\theta)\right|\overset{\mathbb{P}}{\to}0\]
+
+\end_inset
+
+This is called a Uniform law of large numbers (ULLN) 
+\end_layout
+
+\begin_layout Section*
+Oct 29 2009
+\end_layout
+
+\begin_layout Standard
+Recap: 
+\begin_inset Formula $\bar{l}_{n}\left(\theta\right)=\frac{1}{n}\sum_{i=1}^{n}\log f(Y_{i};\theta)$
+\end_inset
+
+ , 
+\begin_inset Formula $\bar{l}(\theta)=\mathbb{E}_{\theta_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbb{P}_{\theta_{0}}\left(\left\Vert \hat{\theta}_{n}-\theta_{0}\right\Vert \geq\epsilon\right) & \leq & \mathbb{P}_{\theta_{0}}\left(\bar{l}(\theta_{0})-\bar{l}(\hat{\theta}_{n})\geq\delta\right)\\
+ & = & \mathbb{P}_{\theta_{0}}\left(\bar{l}_{n}(\hat{\theta}_{n})-\bar{l}(\hat{\theta}_{n})+\bar{l}(\theta_{0})-\bar{l}_{n}(\hat{\theta}_{n})\geq\delta\right)\\
+ & \leq & \mathbb{P}_{\theta_{0}}\left(\sup_{\theta\in\Theta}\left|\bar{l}_{n}(\hat{\theta}_{n})-\bar{l}(\hat{\theta}_{n})\right|+\bar{l}(\theta_{0})-\bar{l}_{n}(\hat{\theta}_{n})\geq\delta\right)\\
+ & \leq & \mathbb{P}_{\theta_{0}}\left(\sup_{\theta\in\Theta}\left|\bar{l}_{n}(\hat{\theta}_{n})-\bar{l}(\hat{\theta}_{n})\right|\geq\frac{\delta}{2}\right)+\mathbb{P}\left(\left|\bar{l}(\theta_{0})-\bar{l}_{n}(\hat{\theta}_{n})\right|\geq\frac{\delta}{2}\right)\\
+ & \to & 0\,\,\,\mbox{as }n\to\infty\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+by our ULLN and the WLLN.
+ 
+\end_layout
+
+\begin_layout Standard
+For asymptotic normality we also require
+\end_layout
+
+\begin_layout Standard
+(6) 
+\begin_inset Formula $\theta_{0}\in\mbox{int }\Theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(7) For each 
+\begin_inset Formula $y\in E$
+\end_inset
+
+, the likelihood 
+\begin_inset Formula $L(\theta;y)$
+\end_inset
+
+ is twice continuously differentiable in 
+\begin_inset Formula $\theta$
+\end_inset
+
+; moreover 
+\begin_inset Formula $\bar{l}(\cdot)$
+\end_inset
+
+ is twice continuously differentiable.
+ 
+\end_layout
+
+\begin_layout Standard
+(8) (a) 
+\begin_inset Formula $\mathbb{E}_{\theta_{0}}\left\{ \sup_{\theta\in\Theta}\left\Vert U^{(i)}(\theta)\right\Vert ^{2}\right\} <\infty$
+\end_inset
+
+, where 
+\begin_inset Formula $U^{(i)}(\theta)=\nabla_{\theta}\log f(Y_{i};\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(b) 
+\begin_inset Formula $\mathbb{E}_{\theta_{0}}\left\{ \sup_{\theta\in\Theta}|||j^{(i)}(\theta)|||\right\} <\infty$
+\end_inset
+
+ where ....
+ and 
+\begin_inset Formula $|||A|||^{2}=\sum\sum A_{jk}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(9) Under condition (8) a, 
+\begin_inset Formula $\mathbb{E}_{\theta_{0}}\left\{ U^{(i)}\left(\theta_{0}\right)\right\} =0$
+\end_inset
+
+ (Proposition (1)), and under conditions (8)a and (b) 
+\begin_inset Formula $i^{(i)}(\theta)\equiv-\mathbb{E}_{\theta_{0}}\left\{ \nabla_{\theta}\nabla_{\theta}^{T}\log f(Y_{i};\theta)\right\} =\mathbb{E}_{\theta_{0}}\left\{ U^{(i)}(\theta_{0})U^{(i)}(\theta_{0})^{T}\right\} $
+\end_inset
+
+.
+ We assume that 
+\begin_inset Formula $i^{(i)}(\theta)$
+\end_inset
+
+ is positive definite.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Theorem 3
+\end_layout
+
+\begin_layout Standard
+Under conditions (1)-(9)
+\begin_inset Formula \[
+n^{1/2}(\hat{\theta}_{n}-\theta_{0})\to N_{d}(0,\, i^{(i)}(\theta_{n})^{-1})\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ denote the event 
+\begin_inset Formula $\left\{ \hat{\theta}_{n}\mbox{ is an interior point of }\Theta\right\} $
+\end_inset
+
+ By Theorem 2 and condition (6) 
+\begin_inset Formula $\mathbb{P}_{\theta_{0}}\left(A_{n}\right)\to1$
+\end_inset
+
+ as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $\bar{U}(\theta)=\frac{1}{n}\sum_{i=1}^{n}\nabla_{\theta}\log f(Y_{i};\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{j}(\theta)=-\frac{1}{n}\sum_{i=1}^{n}\nabla_{\theta}\nabla_{\theta}^{T}\log f(Y_{i};\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+By condition (7) (Mean value theorem)
+\begin_inset Formula \[
+0=\bar{U}(\hat{\theta}_{n})\mathbf{1}_{A_{n}}=\bar{U}(\hat{\theta}_{0})\mathbf{1}_{A_{n}}-\bar{j}(\tilde{\theta}_{n})^{T}\left(\hat{\theta}-\theta_{0}\right)\mathbf{1}_{A_{n}}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+where 
+\begin_inset Formula $\tilde{\theta}_{n}$
+\end_inset
+
+ lies on the line segment between 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+; i.e.
+ 
+\begin_inset Formula $\tilde{\theta}_{n}\in\left\{ t\theta_{0}+(1-t)\theta_{n}\vert t\in[0,1]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(linear transformation of normalized score function & normalized score function
+ is asymptotically normal)
+\end_layout
+
+\begin_layout Proof
+Now 
+\begin_inset Formula \begin{eqnarray*}
+|||j(\tilde{\theta}_{n})\mathbf{1}_{A_{n}}-i^{(i)}(\theta_{0})||| & \leq & |||j(\tilde{\theta}_{n})\mathbf{1}_{A_{n}}-i^{(i)}(\tilde{\theta}_{n})\mathbf{1}_{A_{n}}|||+|||i(\tilde{\theta}_{n})\mathbf{1}_{A_{n}}-i^{(i)}(\theta_{0})\mathbf{1}_{A_{n}}|||+|||i(\theta_{0})\mathbf{1}_{A_{n}}-i^{(i)}(\theta_{0})|||\\
+ & \leq & \sup_{\theta\in\Theta}|||j(\theta)-i^{(1)}\left(\theta\right)|||+|||i(\tilde{\theta}_{n})\mathbf{1}_{A_{n}}-i^{(i)}(\theta_{0})\mathbf{1}_{A_{n}}|||+|||i(\theta_{0})|||\mathbf{1}_{A_{n}}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Now under condition (8)b, the first term converges in probability to zero
+ by a ULLN.
+ The second term converges in probability to zero because 
+\begin_inset Formula $\left\Vert \tilde{\theta}_{n}-\theta_{0}\right\Vert \leq\left\Vert \hat{\theta}_{n}-\theta_{0}\right\Vert \overset{P}{\to}0$
+\end_inset
+
+.
+ By theorem 2 and because 
+\begin_inset Formula $i^{(1)}(\cdot)$
+\end_inset
+
+ is continuous by condition (7) and the dominated convergence theorem.
+ Finally the third term converges to probability because 
+\begin_inset Formula $\mathbb{P}_{\theta_{0}}(A_{n}^{C})\to0$
+\end_inset
+
+ as 
+\begin_inset Formula $n\to\infty.$
+\end_inset
+
+Thus if 
+\begin_inset Formula $B_{n}$
+\end_inset
+
+ denotes the event 
+\begin_inset Formula $A_{n}\bigcap\left\{ j(\tilde{\theta}_{n})\mbox{ is positive definite}\right\} $
+\end_inset
+
+, then 
+\begin_inset Formula $\mathbb{P}_{\theta_{0}}(B_{n})\to1$
+\end_inset
+
+ by condition (9) .
+ It follows from (*) that
+\begin_inset Formula \begin{eqnarray*}
+n^{1/2}(\hat{\theta}_{n}-\theta_{0})\mathbf{1}_{B_{n}} & = & j(\tilde{\theta}_{n})^{-1}n^{1/2}\bar{U}\left(\theta_{0}\right)\mathbf{1}_{B_{n}}\overset{d}{\to}N_{d}\left(0,i^{(1)}(\theta_{0})^{-1}\right)\\
+ & \overset{\mathbb{P}}{\to} & i^{(1)}(\theta_{0})^{-1}\overset{d}{\to}N_{d}\left(\theta,i^{(1)}(\theta)\right)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+by Slutsky's theorem.
+ Finally if g is a continuous function bounded by C, then 
+\begin_inset Formula \[
+\mathbb{E}_{\theta_{0}}\left\{ g(n^{1/2}(\hat{\theta}_{n}-\theta_{0})-n^{1/2}(\hat{\theta}_{n}-\theta_{0})\mathbf{1}_{B_{n}})\right\} \leq C\mathbb{P}(B_{n}^{C})\to0\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Hence 
+\begin_inset Formula $n^{1/2}(\hat{\theta}_{n}-\theta_{0})=n^{1/2}(\hat{\theta}_{n}-\theta_{0})\mathbf{1}_{B_{n}}+\left\{ (n^{1/2}(\hat{\theta}_{n}-\theta_{0})-n^{1/2}(\hat{\theta}_{n}-\theta_{0})\mathbf{1}_{B_{n}}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+This result can be generalized to much more complicated models (without
+ i.i.d components), and indeed this is where it is most useful.
+ It forms the basis for the standard hypothesis tests and confidence sets
+ based on the Wald, score and likelihood ratio statistics.
+ Ex.
+ 2.
+ FOr instance a confidence set of asymptotic 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+ level coverage based on the Wald statistic.
+ 
+\begin_inset Formula $W_{w}(\theta_{0})=(\hat{\theta}_{n}-\theta_{0})^{T}i(\theta_{0})(\hat{\theta}_{n}-\theta_{0})$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\left\{ \theta_{0}\in\Theta:\, W_{w}\left(\theta_{0}\right)\leq\chi_{d}^{2}(\alpha)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Nov 3 2009
+\end_layout
+
+\begin_layout Standard
+MLE is asymptotically efficient by the Cramer-Rao lower bound.
+\end_layout
+
+\begin_layout Subsection*
+2.3 Generalized linear models
+\end_layout
+
+\begin_layout Standard
+Consider a family of densities with respect to a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+- finite measure of the form
+\begin_inset Formula \begin{equation}
+f(y;\mu,\sigma^{2})=a(\sigma^{2},\, y)\exp\left\{ \frac{1}{\sigma^{2}}\left\{ \theta(\mu)y-k(\theta(\mu))\right\} \right\} \label{eq:star}\end{equation}
+
+\end_inset
+
+,
+\begin_inset Formula $y\in E,\subseteq\mathbb{R}$
+\end_inset
+
+ , 
+\begin_inset Formula $\mu\in M\subseteq\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{2}\in\Phi\subseteq\left(0,\infty\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $a(\sigma^{2},y)$
+\end_inset
+
+ is a known, positive function.
+ Such a family is called an 
+\emph on
+exponential dispersion family
+\emph default
+, and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is called the 
+\emph on
+dispersion parameter
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If Y is of exponential dispersion family form, then its cumulant generating
+ function (i.e logarithm of the mgf)
+\begin_inset Formula \[
+K(t;\mu,\sigma^{2})=\frac{1}{\sigma^{2}}\left\{ K\left(\sigma^{2}t+\theta(\mu)\right)-K(\theta(\mu))\right\} \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $\mathbb{E}_{\mu,\sigma^{2}}\left(y\right)=K'(\theta(\mu))$
+\end_inset
+
+, 
+\begin_inset Formula $Var_{\mu,\sigma^{2}}(y)=\sigma^{2}K''(\theta(\mu))\equiv\sigma^{2}V(\mu)$
+\end_inset
+
+ (see example sheet)
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $V(\mu)$
+\end_inset
+
+ is the 
+\emph on
+variance function
+\emph default
+, and it turns out that an exponential dispersion family 
+\begin_inset Formula $K(t)=\sum_{r=1}^{\infty}\kappa_{r}\frac{t^{r}}{r!}$
+\end_inset
+
+ is completely characterized by 
+\begin_inset Formula $\left(V(\mu),\mu,\Phi\right)$
+\end_inset
+
+.
+ We may therefore write 
+\begin_inset Formula $Y\sim ED(\mu,\sigma^{2}V(\mu))$
+\end_inset
+
+, 
+\begin_inset Formula $\mu\in\mathcal{M}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{2}\in\Phi$
+\end_inset
+
+ to mean that 
+\begin_inset Formula $y$
+\end_inset
+
+ is of exponential dispersion family form, with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}V(\mu)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Examples: 
+\begin_inset Formula $N(\mu,\sigma^{2})$
+\end_inset
+
+, 
+\begin_inset Formula $\mbox{Poi}(\mu)$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{n}\mbox{Bin}(n,\mu)$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma(\upsilon,\varphi)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A 
+\emph on
+generalized linear model
+\emph default
+ (GLM) is a model for independent responses 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ in which:
+\end_layout
+
+\begin_layout Standard
+i) 
+\begin_inset Formula $Y_{i}\sim ED\left(\mu_{i},\sigma_{i}^{2}V(\mu_{i})\right),$
+\end_inset
+
+ 
+\begin_inset Formula $\mu_{i}\in\mathcal{M}$
+\end_inset
+
+, where 
+\begin_inset Formula $\sigma_{i}^{2}=\sigma^{2}a_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is an unknown dispersion parameter and 
+\begin_inset Formula $a_{1},..,a_{n}$
+\end_inset
+
+ are known constants.
+ Thus each 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ comes from the same exponential dispersion family, and 
+\begin_inset Formula $\mathbb{E}Y_{i}=\mu_{i}$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $Y_{i}\sim\frac{1}{n_{i}}Bin(n_{i},\mu_{i})$
+\end_inset
+
+, we have 
+\begin_inset Formula $\sigma_{i}^{2}=\frac{1}{n_{i}}$
+\end_inset
+
+, so we can take 
+\begin_inset Formula $a_{i}=\frac{1}{n_{i}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\sigma^{2}=1$
+\end_inset
+
+ (Challenger, tested the O-rings but at the wrong temperature, so 
+\begin_inset Formula $n$
+\end_inset
+
+ has to depend on 
+\begin_inset Formula $i$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+ii) The 
+\begin_inset Formula $i$
+\end_inset
+
+-th component of the 
+\emph on
+linear predictor 
+\emph default
+
+\begin_inset Formula $\eta_{i}=x_{i}^{T}\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ are related through 
+\begin_inset Formula $g(\mu_{i})=\eta_{i},\, i=1,...,n$
+\end_inset
+
+, where 
+\begin_inset Formula $g$
+\end_inset
+
+ is a strictly increasing twice differentiable function called the 
+\emph on
+link function
+\emph default
+.
+ Here, 
+\begin_inset Formula $x_{i}^{T}=\left(x_{i1},...,x_{ip}\right)$
+\end_inset
+
+ is a vector of known explanatory variables, and 
+\begin_inset Formula $\beta=\left(\beta_{1},...,\beta_{p}\right)^{T}$
+\end_inset
+
+ is an unknown vector of regression coefficients.
+ 
+\end_layout
+
+\begin_layout Standard
+The choice 
+\begin_inset Formula $g(\mu)=\theta(\mu)$
+\end_inset
+
+ in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:star"
+
+\end_inset
+
+) is called the 
+\emph on
+cannonical link function
+\emph default
+, and it simplifieds the calculations in certain cases.
+ FOr instance, if 
+\begin_inset Formula $Y=(Y_{1},..,Y_{n})^{T}$
+\end_inset
+
+ is a vector of responses from a GLM, then its density is
+\begin_inset Formula \[
+f_{y}(y;\mu,\sigma^{2})=\left\{ \prod_{j=1}^{n}a(\sigma^{2},\, y_{j})\right\} \exp\left\{ \sum_{i=1}^{n}\frac{\theta(\mu_{i})y_{i}}{\sigma_{i}^{2}}-\sum_{i=1}^{n}\frac{K\left(\theta(\mu_{i})\right)}{\sigma_{i}^{2}}\right\} \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mu_{i}=g^{-1}(x_{i}^{T}\beta)$
+\end_inset
+
+.
+ Thus, in general, there is no reduction in dimensionality from sufficiency.
+ However, for the cannonical link function, the density is
+\begin_inset Formula \[
+f_{y}(y;\beta,\sigma^{2})=\left\{ \prod_{i=1}^{n}a(\sigma^{2},\, y_{i})\right\} \exp\left\{ \beta^{T}\sum_{i=1}^{n}\frac{x_{i}y_{i}}{\sigma_{i}^{2}}-\sum_{i=1}^{n}\frac{K\left(x_{i}^{T}\beta\right)}{\sigma_{i}^{2}}\right\} \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+from which we see that the vector 
+\begin_inset Formula \[
+\sum_{i=1}^{n}\frac{x_{i}y_{i}}{a_{i}}=\left(\sum_{i=1}^{n}\frac{x_{i1}y_{i}}{a_{i}},...,\sum_{i=1}^{n}\frac{x_{ip}y_{i}}{a_{i}}\right)^{T}\]
+
+\end_inset
+
+is sufficient for 
+\begin_inset Formula $\beta$
+\end_inset
+
+, for each fixed value of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In general, there is no closed-form expression for the MLE 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+, but we can use a Newton-Ralphson type algorithm (Fisher scoring is a slight
+ variant) to find a sequence converging to 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+.
+ Moreover, under mild conditions on 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+, we can apply the results of section 2.2 to deduce that 
+\begin_inset Formula $n^{1/2}(\hat{\beta}-\beta)\overset{d}{\to}N_{p}\left(0,\, i^{(1)}(\beta)^{-1}\right)$
+\end_inset
+
+.
+ This result can be used to estimate the standard deviation of components
+ of 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+, or to test hypotheses about 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Alternatively, tests can be based on the 
+\emph on
+deviance
+\emph default
+, which is closely related to the likelihood ratio statistic.
+ 
+\end_layout
+
+\begin_layout Standard
+(iii) 
+\end_layout
+
+\begin_layout Section*
+Nov 10 2009
+\end_layout
+
+\begin_layout Standard
+Recap: 
+\begin_inset Formula $X\sim N_{p}(\theta,\, I)\,\,\,\hat{\theta}_{s}(X)=\left(1-\frac{p-2}{\left\Vert X\right\Vert ^{2}}\right)X\,\,\,\hat{\theta}_{0}(X)=X$
+\end_inset
+
+
+\begin_inset Formula \[
+R(\hat{\theta},\theta)=p+(p-2)^{2}\mathbb{E}_{\theta}\left(\frac{1}{\left\Vert X\right\Vert ^{2}}\right)-2(p-2)\mathbb{E}_{\theta}\left\{ \frac{X^{T}(X-\theta)}{\left\Vert X\right\Vert ^{2}}\right\} \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Writing 
+\begin_inset Formula $\phi$
+\end_inset
+
+ for the standard normal density on 
+\begin_inset Formula $\mathbb{R}^{p}$
+\end_inset
+
+, 
+\begin_inset Formula \begin{eqnarray*}
+\mathbb{E}_{\theta}\left\{ \frac{X_{1}(X_{1}-\theta_{1})}{\left\Vert X\right\Vert ^{2}}\right\}  & = & \int_{\mathbb{R}^{p-1}}\int_{-\infty}^{\infty}\frac{X_{1}(X_{1}-\theta_{1})}{\left\Vert X\right\Vert ^{2}}dx_{1}dx_{2}...dx_{p}\\
+ & = & \int_{\mathbb{R}^{p-1}}\left\{ \left[-\frac{x_{1}}{\left\Vert x\right\Vert ^{2}}\phi(x-\theta)\right]_{-\infty}^{\infty}+\int_{-\infty}^{\infty}\frac{\left\Vert x\right\Vert ^{2}-2x_{1}^{2}}{\left\Vert x\right\Vert ^{4}}\phi(x-\theta)dx_{1}\right\} dx_{2}..dx_{p}\\
+ & = & \mathbb{E}_{\theta}\left\{ \frac{\left\Vert X\right\Vert ^{2}-2X_{1}^{2}}{\left\Vert X\right\Vert ^{4}}\right\} \end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows that 
+\begin_inset Formula \begin{eqnarray*}
+R(\hat{\theta}_{s},\,\theta) & = & p+(p-2)^{2}\mathbb{E}_{\theta}\left(\frac{1}{\left\Vert X\right\Vert ^{2}}\right)-2(p-2)\sum_{j=1}^{p}\mathbb{E}_{\theta}\left\{ \frac{X_{1}(X_{1}-\theta_{1})}{\left\Vert X\right\Vert ^{2}}\right\} \\
+ & = & p+(p-2)^{2}\mathbb{E}_{\theta}\left(\frac{1}{\left\Vert X\right\Vert ^{2}}\right)-2(p-2)\sum_{j=1}^{p}\mathbb{E}_{\theta}\left\{ \frac{\left\Vert X\right\Vert ^{2}-2X_{1}^{2}}{\left\Vert X\right\Vert ^{4}}\right\} \\
+ & = & p-(p-2)^{2}\mathbb{E}_{\theta}\left(\frac{1}{\left\Vert X\right\Vert ^{2}}\right)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, when 
+\begin_inset Formula $p\geq3$
+\end_inset
+
+, the Stein estimator strictly dominates 
+\begin_inset Formula $\hat{\theta}_{0}$
+\end_inset
+
+, so 
+\begin_inset Formula $\hat{\theta}_{0}$
+\end_inset
+
+ is in admissable! In fact, the Stein estimator is strictly dominated by
+ the 
+\emph on
+positive-part Stein estimator
+\emph default
+ 
+\begin_inset Formula \[
+\hat{\theta}_{S}^{+}(X)=\left(1-\frac{p-2}{\left\Vert X\right\Vert }\right)^{+}X\]
+
+\end_inset
+
+ Even this latter estimator is inadmissable, through it can't be beaten
+ by much.
+ Surprisingly, the Stein estimate of 
+\begin_inset Formula $\theta_{j}$
+\end_inset
+
+ depends not just on 
+\begin_inset Formula $X_{j}$
+\end_inset
+
+, but on all of the components of 
+\begin_inset Formula $X$
+\end_inset
+
+, even though the components of 
+\begin_inset Formula $X$
+\end_inset
+
+ are independent! It is crucial, however, that we are interested in estimating
+ all components simultaneously; The Stein phenomenon would not hold if 
+\begin_inset Formula $L(\hat{\theta},\theta)=(\hat{\theta}_{1}-\theta_{1})^{2}$
+\end_inset
+
+, for instance.
+ 
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $X\sim N_{p}\left(\theta,\,\sigma^{2}I\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is unknown, it is natural to assume that we also have 
+\begin_inset Formula $S\sim\frac{\sigma^{2}}{m}\chi_{m}^{2}$
+\end_inset
+
+, independently of X.
+ This is because 
+\begin_inset Formula $X$
+\end_inset
+
+ might represent a sample mean of independent and identically distributed
+ normal random vectors, and 
+\begin_inset Formula $S$
+\end_inset
+
+ might be a pooled estimate of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ based on the sample variances in each component.
+ 
+\end_layout
+
+\begin_layout Standard
+Examples Class (MR14 @ 5-6:30pm) Tuesday Nov 17th
+\end_layout
+
+\begin_layout Standard
+In that case, th natural Stein estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, namely
+\begin_inset Formula \[
+\hat{\theta}(X,\, S)=\left(1-\frac{aS}{\left\Vert X\right\Vert ^{2}}\right)X\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+strictly dominates 
+\begin_inset Formula $\hat{\theta}_{0}(X)=X$
+\end_inset
+
+ for sufficiently small 
+\begin_inset Formula $a>0$
+\end_inset
+
+ (see example sheet).
+ The theory extends to a general uknown covariance matrixin the normal case,
+ and in fact to a very wide class of distributions and loss functions, showing
+ that the Stein phenomenon is very general.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Ridge regression (Hoerl and Kennard, 1970)
+\end_layout
+
+\begin_layout Standard
+Consider the linear model with an intercept term 
+\begin_inset Formula $Y=\beta_{0}+X\beta+\epsilon$
+\end_inset
+
+.
+ When some of the columns of 
+\begin_inset Formula $X$
+\end_inset
+
+ are nearly collinear (as is likely when 
+\begin_inset Formula $p$
+\end_inset
+
+ is nearly as large as n), the determinant of 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+, which is the square of the volume of the parallelepiped whose edges are
+ the columns of 
+\begin_inset Formula $X$
+\end_inset
+
+, is nearly 0.
+ Thus, since a determinant is the product of the eigenvalues, at least one
+ of the eigenvalues of 
+\begin_inset Formula $\left(X^{T}X\right)^{-1}$
+\end_inset
+
+is very large.
+ But 
+\begin_inset Formula $\hat{\beta}\sim N_{p}\left(\beta,\,\sigma^{2}\left(X^{T}X\right)^{-1}\right)$
+\end_inset
+
+, at least when the columns of 
+\begin_inset Formula $X$
+\end_inset
+
+ are orthogonal to 
+\begin_inset Formula $(1,1,1,...,1,1)^{T}$
+\end_inset
+
+, and the sum of the eigenvalues is the trace, so at least one of the components
+ of 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ has very large variance.
+ We therefore seek to shrink 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ towards the origin.
+ This will introduce a bias, but we hope it will be more than compensated
+ by a reduction in variance.
+ 
+\end_layout
+
+\begin_layout Standard
+For fixed 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+, the 
+\emph on
+ridge regression estimator 
+\emph default
+is 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R}$
+\end_inset
+
+, where 
+\begin_inset Formula $\left(\hat{\beta}_{0},\hat{\beta}_{\lambda}^{R}\right)$
+\end_inset
+
+ minimise
+\begin_inset Formula \[
+Q_{2}(\beta_{0},\beta)=\sum_{i=1}^{n}\left(Y_{i}-\beta_{0}-\sum_{j=1}^{p}x_{ij}\beta_{j}\right)^{2}+\lambda\sum_{j=1}^{p}\beta_{j}^{2}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus the negative log-likelihood (or equivalently, the least squares objective
+ function) is penalised by an additional term, propertional to 
+\begin_inset Formula $\left\Vert \beta\right\Vert _{2}^{2}=\sum_{j=1}^{p}\beta_{j}^{2}$
+\end_inset
+
+ .
+ Notice that 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ is not penalised (otherwise the resulting estimator would not be location
+ equivariant).
+ However, 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R}$
+\end_inset
+
+ is not equivariant under scale transformations, so it is standard to assume
+ that 
+\begin_inset Formula $X$
+\end_inset
+
+ has first been standardized so that each column of X has sample mean 0
+ and sample variance 1.
+ We see that small values of 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ result in a small penalty, so 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R}$
+\end_inset
+
+ is close to 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+, whereas large 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ yields considerable shrinkage.
+ 
+\end_layout
+
+\begin_layout Standard
+Next time we will see 
+\begin_inset Formula $\exists\lambda_{0}>0$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $\forall\lambda\in(0,\lambda_{0})$
+\end_inset
+
+, MSE(
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R}$
+\end_inset
+
+) < MSE(
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+It is straightforward to see that 
+\begin_inset Formula $\hat{\beta}_{0}=n^{-1}\sum_{i=1}^{n}Y_{i}=\bar{Y}$
+\end_inset
+
+ (see example sheet), so we may assume 
+\begin_inset Formula $\sum_{i=1}^{n}Y_{i}=0$
+\end_inset
+
+ by replacing 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $Y_{i}-\overline{Y}$
+\end_inset
+
+, and then remove 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ from our model.
+ In that case, 
+\begin_inset Formula \[
+\hat{\beta}_{\lambda}^{R}=(X^{T}X+\lambda I)^{-1}X^{T}Y\]
+
+\end_inset
+
+ (see example sheet)
+\end_layout
+
+\begin_layout Standard
+Observe that 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R}$
+\end_inset
+
+ also minimises
+\begin_inset Formula \[
+\sum_{i=1}^{n}\left(Y_{i}-\sum_{j=1}^{p}x_{ij}\beta_{j}\right)^{2}\]
+
+\end_inset
+
+ subject to 
+\begin_inset Formula $\sum_{j=1}^{p}\beta_{j}^{2}\leq s$
+\end_inset
+
+ where 
+\begin_inset Formula $s=s(\lambda)$
+\end_inset
+
+ is a bijective function.
+ It can also be motivated in a Bayesian way as the maximum a posteriori
+ (MAP) and posterior mean estimators of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ under a 
+\begin_inset Formula $N_{p}\left(0,\,\frac{1}{\lambda}I\right)$
+\end_inset
+
+ prior.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to study the Mean Squared Error (MSE) properties of 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R}$
+\end_inset
+
+, we define 
+\begin_inset Formula $V=\left(I+\lambda\left(X^{T}X\right)^{-1}\right)^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $W=\left(X^{T}X+\lambda I\right)^{-1}$
+\end_inset
+
+, so that
+\begin_inset Formula \[
+\hat{\beta}_{\lambda}^{R}=\left(X^{T}X+\lambda I\right)^{-1}X^{T}Y=WX^{T}Y=V\hat{\beta}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $V-I=\left(I+\lambda(X^{T}X)^{-1}\right)^{-1}-I=WX^{T}X-I=W\left(X^{T}X-W^{-1}\right)=-\lambda W$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assume that 
+\begin_inset Formula $X$
+\end_inset
+
+ has full rank p (in particular, 
+\begin_inset Formula $p\leq n$
+\end_inset
+
+), and write 
+\begin_inset Formula $\mu_{1}\geq...\geq\mu_{p}>0$
+\end_inset
+
+ for the eigenvalues of 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $P$
+\end_inset
+
+ be an orthogonal matrix such that 
+\begin_inset Formula $P^{T}X^{T}XP=D\equiv\mbox{diag}(\mu_{1},...,\mu_{p})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula \begin{eqnarray*}
+\det\left(W-\frac{1}{\mu_{j}+\lambda}I\right) & = & \det\left(\left(PDP^{T}+\lambda I\right)^{-1}-\frac{1}{\mu_{i}+\lambda}I\right)\\
+ & = & \det\left(P(D+\lambda I)^{-1}P^{T}-\frac{1}{\mu_{i}+\lambda}PP^{T}\right)\\
+ & = & \det\left((D+\lambda I)^{-1}-\frac{1}{\mu_{i}+\lambda}I\right)\\
+ & = & 0\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus the eigenvalues of 
+\begin_inset Formula $W$
+\end_inset
+
+ are 
+\begin_inset Formula $\frac{1}{\mu_{1}+\lambda}\leq...\leq\frac{1}{\mu_{p}+\lambda}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\bar under
+Theorem 1
+\end_layout
+
+\begin_layout Standard
+For sufficiently small 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+, we have MSE(
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R})$
+\end_inset
+
+ < MSE
+\begin_inset Formula $(\hat{\beta})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Proof: MSE(
+\begin_inset Formula $\hat{\beta}_{\lambda}^{R})$
+\end_inset
+
+
+\begin_inset Formula $=\mathbb{E}_{\beta}\left(\left\Vert \hat{\beta}_{\lambda}-\beta\right\Vert ^{2}\right)=\mathbb{E}_{\beta}\left(\left\Vert V\hat{\beta}-V\beta+V\beta-\beta\right\Vert \right)$
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray*}
+ & = & \mathbb{E}_{\beta}\left(\left\Vert V\left(\hat{\beta}-\beta\right)\right\Vert \right)+\beta^{T}(V-I)^{T}(V-I)\beta\\
+ & = & \sigma^{2}\mbox{Tr}\left(V\left(X^{T}X\right)^{-1}V^{T}\right)+\lambda^{2}B^{T}W^{T}W\beta\\
+ & = & \sigma^{2}\mbox{Tr}\left(\left(X^{T}X\right)^{-1}V^{T}V\right)+\lambda^{2}\beta^{T}\left(PDP^{T}-\lambda I\right)^{-1}\left(PDP^{T}-\lambda I\right)^{-1}\beta\\
+ & = & \sigma^{2}\mbox{Tr}\left(W(I-\lambda W)\right)+\lambda^{2}\beta^{T}P\left(D-\lambda I\right)^{-2}P^{T}\beta\\
+ & = & \sigma^{2}\sum_{j=1}^{p}\frac{1}{\mu_{j}+\lambda}-\lambda\sigma^{2}\sum_{j=1}^{p}\frac{1}{\left(\mu_{j}+\lambda\right)^{2}}+\lambda^{2}\sum_{j=1}^{p}\frac{\alpha_{j}^{2}}{\left(\mu_{j}+\lambda\right)^{2}}\\
+ & = & \sigma^{2}\sum_{j=1}^{p}\frac{\mu_{j}}{(\mu_{j}+\lambda)^{2}}+\lambda^{2}\sum_{j=1}^{p}\frac{\alpha_{j}^{2}}{\left(\mu_{j}+\lambda\right)^{2}}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\alpha=P^{T}\beta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus the variance is a monotone decreasing function of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, while the squared bias is amonotone increasing function of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ We deduce that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\frac{d}{d\lambda}\mbox{MSE}\left(\hat{\beta}_{\lambda}^{R}\right) & = & -2\sigma^{2}\sum_{j=1}^{p}\frac{\mu_{j}}{\left(\mu_{j}+\lambda\right)^{2}}+\sum_{j=1}^{p}\frac{\left\{ 2\left(\mu_{j}+\lambda\right)^{2}\lambda-2\lambda^{2}(\mu_{j}+\lambda)\right\} a_{j}^{2}}{\left(\mu_{j}+\lambda\right)^{4}}\\
+ & = & -2\sigma^{2}\sum_{j=1}^{p}\frac{\mu_{j}}{\left(\mu_{j}+\lambda\right)^{3}}+2\lambda\sum_{j=1}^{p}\frac{\mu_{j}x_{j}^{2}}{\left(\mu_{j}+\lambda\right)^{3}}\\
+ & < & 0\end{eqnarray*}
+
+\end_inset
+
+for 
+\begin_inset Formula $0\leq\lambda<\frac{\sigma^{2}}{\alpha_{\max}}$
+\end_inset
+
+, where 
+\begin_inset Formula $\alpha_{\max}^{2}=\max\left(\alpha_{1}^{2},...,\alpha_{p}^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unfortunately, a poor choice of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ may substantially increase the MSE.
+ In practice, 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is often chosen by 
+\bar under
+
+\begin_inset Formula $V$
+\end_inset
+
+-fold cross validation.
+
+\bar default
+ The idea is to randomly split the data into v groups (folds) of roughly
+ the same size.
+ For each 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ on a grid of values, and for 
+\begin_inset Formula $k=1,..,v$
+\end_inset
+
+, we compute 
+\begin_inset Formula $\hat{\beta}_{\lambda,-k}^{R}$
+\end_inset
+
+, the ridge regression estimator of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ based on all of the data except the 
+\begin_inset Formula $k$
+\end_inset
+
+-th fold.
+ Writing 
+\begin_inset Formula $\kappa(i)$
+\end_inset
+
+ for the fold to which 
+\begin_inset Formula $\left(X_{i},\, Y_{i}\right)$
+\end_inset
+
+ belongs, we choose the value of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ that minimises
+\begin_inset Formula \[
+CV(\lambda)=\sum_{i=1}^{n}\left(Y_{i}-x_{i}^{T}\hat{\beta}_{\lambda,\,-k(i)}^{R}\right)^{2}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a fairly reliable way of choosing tuning parameters, although because
+ we use the same data for both the fitting, and assessing the fit, the method
+ can be prone to overfitting (choosing 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ too small).
+ Common choices of 
+\begin_inset Formula $v$
+\end_inset
+
+ include 
+\begin_inset Formula $5,10$
+\end_inset
+
+ or 
+\begin_inset Formula $n$
+\end_inset
+
+, the last of these being knwon as 'leave-one-out' cross validation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V(\hat{\beta}-\beta)\sim N_{p}\left(0,\,\sigma^{2}V(X^{T}X)^{-1}V^{T}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.3 Model selection
+\end_layout
+
+\begin_layout Standard
+Although the ridge regression estimator may reduce the mean squared error
+ of 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ , it does not directly help us to choose an appropriate model.
+ We may potentially want to consider many potential covariates.
+ But there are many reasons for prefering a smaller final model:
+\end_layout
+
+\begin_layout Standard
+1) prediction accuracy may well be improved
+\end_layout
+
+\begin_layout Standard
+2) It is much easier to interpret a smaller model 
+\end_layout
+
+\begin_layout Standard
+3) In many applications, there is an underlying belief that the 'true mode'
+ is 
+\emph on
+sparse.
+\end_layout
+
+\begin_layout Standard
+We now review some traditional model strategy
+\end_layout
+
+\begin_layout Standard
+1) 
+\bar under
+Best subset regression: 
+\bar default
+For each 
+\begin_inset Formula $k\in\{0,1,..p\}$
+\end_inset
+
+, let 
+\begin_inset Formula $\hat{\beta}_{\left[k\right]}$
+\end_inset
+
+ denote the value of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ with 
+\begin_inset Formula $k$
+\end_inset
+
+ nonzero entries that minimizes
+\begin_inset Formula \[
+RSS(\beta)=\sum_{i=1}^{n}\left(Y_{i}-\beta_{0}-\sum_{j=1}^{p}x_{ij}\beta_{j}\right)^{2}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For instance, the 
+\bar under
+Akaike information criterion
+\bar default
+ (Akaike, 1974) chooses k to minimize 
+\begin_inset Formula $RSS(\hat{\beta}_{\left[k\right]})+2k$
+\end_inset
+
+, while the 
+\bar under
+Bayesian information criterion
+\bar default
+ (Schwartz, 1978) uses 
+\begin_inset Formula $RSS(\hat{\beta}_{\left[k\right]})+k\log n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2) 
+\bar under
+Forward stepwise selection: 
+\bar default
+Start with just the intercept term and at each subsequent stage add the
+ variable that gives the largest reduction in residual sum of squares.
+ This produces a sequence 
+\begin_inset Formula $\hat{\beta}_{0}^{F}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\beta}_{1}^{F}$
+\end_inset
+
+, ..., and we stop when
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{RSS\left(\hat{\beta}_{k}^{F}\right)-RSS\left(\hat{\beta}_{k+1}^{F}\right)}{\frac{1}{n-k-2}RSS\left(\hat{\beta}_{k+1}^{F}\right)}\leq F_{1,n-k-2}(\alpha)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $F_{1,n-k-2}(\alpha)$
+\end_inset
+
+ is the upper 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ point of the 
+\begin_inset Formula $F_{1,n-k-z}$
+\end_inset
+
+ distribution (how to choose 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ to account for the fact that we are doing multiple testing).
+\end_layout
+
+\begin_layout Standard
+3) 
+\bar under
+Backward stepwise selection: 
+\bar default
+(p<n) start with the full model, and at each subsequent stage delete the
+ variable that results in the RSS.
+ Use a F-test as above to determine when to stop.
+\end_layout
+
+\begin_layout Subsection*
+3.4 The LASSO (Tibshirani, 1996)
+\end_layout
+
+\begin_layout Standard
+The least absolute shrinkage and selection operator (LASSO) estimates 
+\begin_inset Formula $\beta$
+\end_inset
+
+ by 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{LASSO}$
+\end_inset
+
+, where 
+\begin_inset Formula $\left(\beta_{0},\hat{\beta}_{\lambda}^{LASSO}\right)$
+\end_inset
+
+ minimizes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+Q(\beta_{0},\beta)=\frac{1}{2}\sum_{i=1}^{n}\left(Y_{i}-\beta_{0}-\sum\beta\right)^{2}+\lambda\sum_{j=1}^{p}\left|\beta_{j}\right|\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like ridge regression, 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{LASSO}$
+\end_inset
+
+ shrinks the least squares estimator (MLE) towards the origin.
+ Crucially though, some of the components of 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ would be shrink to exactly zero, thus the LASSO performs simultaneous variable
+ (model) selection and estimation.
+ 
+\end_layout
+
+\begin_layout Standard
+We way replace 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ with 
+\begin_inset Formula $Y_{i}-\bar{Y}=Y_{i}-\hat{\beta}_{0}$
+\end_inset
+
+ so that with our new definition at 
+\begin_inset Formula $Y_{1},...Y_{n}$
+\end_inset
+
+ the LASSO estimator 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{LASSO}$
+\end_inset
+
+ minimizes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+Q_{1}(\beta)=\frac{1}{2}\sum_{i=1}^{n}\left(Y_{i}-\sum_{j=1}^{p}x_{ij}\beta_{j}\right)^{2}+\lambda\sum_{j=1}^{n}\left|\beta_{j}\right|\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equivalently 
+\begin_inset Formula \[
+\hat{\beta}_{\lambda}^{LASSO}=\arg\min_{\beta}\frac{1}{2}\left(Y_{i}-\sum_{j=1}^{p}x_{ij}\beta_{j}\right)^{2}\]
+
+\end_inset
+
+ subject to 
+\begin_inset Formula $\sum_{j=1}^{n}\left|\beta_{j}\right|\leq s$
+\end_inset
+
+ or 
+\begin_inset Formula \[
+\hat{\beta}_{\lambda}^{LASSO}=\arg\min_{\beta}\sum_{j=1}^{n}\left|\beta_{j}\right|\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+subject to 
+\begin_inset Formula $\frac{1}{2}\sum_{i=1}^{n}\left(Y_{i}-\sum_{j=1}^{p}x_{ij}\beta_{j}\right)^{2}\leq t$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+TO see why some of the terms of 
+\begin_inset Formula $\hat{\beta}_{\lambda}^{LASSO}$
+\end_inset
+
+ will typically be zero.
+ Think 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, in that case my original estimator is 
+\begin_inset Formula $\hat{\beta}=X^{T}Y$
+\end_inset
+
+
+\begin_inset Formula \[
+Q(\beta)=\frac{1}{2}\left\Vert Y-\hat{Y}\right\Vert ^{2}+\frac{1}{2}\sum_{j=1}^{p}\left(\hat{\beta_{j}}-\beta_{j}\right)^{2}+\lambda\sum_{j=1}^{p}\left|\beta_{j}\right|\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(see example sheet) Since 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ does not depend on 
+\begin_inset Formula $\beta$
+\end_inset
+
+, we can minimize separately over each component and find
+\begin_inset Formula \[
+\hat{\beta}_{\lambda}^{LASSO}=\mbox{sgn}(\hat{\beta}_{j})(\left|\hat{\beta}_{j}\right|-\lambda)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In particular, those components of 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ that are smaller than 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ will be shrunk to be exactly zero.
+ The LASSO estimator in this special case is a 
+\bar under
+soft-thresholding estimator.
+
+\bar default
+ 
+\end_layout
+
+\begin_layout Standard
+Example Class
+\end_layout
+
+\begin_layout Standard
+5) Recall 
+\begin_inset Formula $Y$
+\end_inset
+
+ has density 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+f_{y}\left(y;\mu,\sigma^{2}\right)=a(\sigma^{2},\, y)\exp\left\{ \frac{1}{\sigma^{2}}\theta(\mu)y-k(\theta)\right\} \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+w.r.t a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+- finite measure 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ Its mgf is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+M\left(t,\mu,\sigma^{2}\right) & = & \int e^{y}a(\sigma^{2},\, y)\exp\left\{ \frac{1}{\sigma^{2}}\theta(\mu)y-k(\theta(\mu))\right\} \\
+ & = & \exp\left\{ \frac{1}{\sigma^{2}}\left[K(\sigma^{2}t+\theta(\mu))-K(\theta(\mu))\right]\right\} \end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows that 
+\begin_inset Formula \[
+\mathbb{E}(Y)=\frac{d}{dt}K_{y}(t;\mu,\sigma^{2})\vert_{t=0}=K'(\theta(\mu))\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+Var(Y)=\frac{d^{2}}{dt^{2}}K_{y}(t;\mu,\sigma^{2})\vert_{t=0}=\sigma^{2}K''(\theta(\mu))\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+7.
+ Consider a sequence of values of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ converging to 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\begin_inset Formula \[
+R\left(\hat{\theta}_{n,\mu},\theta\right)=1-(1-a^{2})\int_{-n^{1/4}-n^{1/2}\theta}^{n^{1/4}+n^{1/2}\theta}z^{2}\phi(z)dz+za(1-a)\theta n^{1/2}\left\{ \phi\left(n^{1/4}-n^{1/2}\theta\right)-\phi(-n^{1/4}-n^{1/2}\theta)\right\} +n\theta^{2}(1-a)^{2}\{\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\Phi(n^{1/4}-n^{1/2})-\Phi(-n^{1/4}-n^{1/2}\theta)\}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $R(\hat{\theta}_{n,M},\, n^{-1/4})\geq1-\frac{1-a^{2}}{2}$
+\end_inset
+
+ goes to 
+\begin_inset Formula $\infty$
+\end_inset
+
+ as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+8) what we're concluding here is a little bit different from what we did
+ in lectures.
+ 
+\begin_inset Formula \[
+n^{1/2}(\hat{\theta}_{n,\mu}-\theta)\overset{d}{\to}\begin{cases}
+N(0,a^{2}) & \theta=0\\
+N(0,1) & \theta\neq0\end{cases}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+X has the same distribution as 
+\begin_inset Formula $Z+\theta$
+\end_inset
+
+, where 
+\begin_inset Formula $Z\sim N_{p}(0,I)$
+\end_inset
+
+, so 
+\begin_inset Formula \begin{eqnarray*}
+R(\hat{\theta}(X),\theta) & = & \mathbb{E}(L(\hat{\theta}(Z+\theta),\,\theta))\\
+ & = & \mathbb{E}\left(L(\hat{\theta}(Z)+\theta,\,\theta\right)\\
+ & = & \mathbb{E}\left(L(\hat{\theta}(Z),\,0\right)\end{eqnarray*}
+
+\end_inset
+
+Let 
+\begin_inset Formula $\hat{\theta}(0)=k$
+\end_inset
+
+.
+ Then
+\begin_inset Formula \begin{eqnarray*}
+R(\hat{\theta},\theta) & = & \mathbb{E}\left(\left\Vert \hat{\theta}(Z)\right\Vert ^{2}\right)\\
+ & = & \mathbb{E}\left(\left\Vert Z+k\right\Vert ^{2}\right)\\
+ & = & p+\left\Vert k\right\Vert ^{2}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+minimized by choosing 
+\begin_inset Formula $k=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+10) form lectures 
+\begin_inset Formula \[
+R(\hat{\theta}_{s},\theta)=p-(p-2)^{2}\mathbb{E}_{\theta}\left(\frac{1}{\left\Vert X\right\Vert ^{2}}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now if 
+\begin_inset Formula $Y\sim\chi_{m}^{2}$
+\end_inset
+
+, then 
+\begin_inset Formula $\mathbb{E}\left(\frac{1}{Y}\right)=\int_{0}^{\infty}\frac{1}{y}\frac{y^{\frac{m}{2}-1}e^{-y/2}}{2^{m/2}\Gamma(\frac{m}{2})}dy=\frac{2^{\frac{m-1}{2}\Gamma\left(\frac{m-2}{2}\right)}}{2^{\frac{m-1}{2}}\Gamma\left(\frac{m}{2}\right)}\int_{0}^{\infty}\frac{y^{m/2-2}e^{-y/2}}{2^{\frac{m-2}{2}}\Gamma(\frac{m-2}{2})}dy=\frac{1}{m-2}$
+\end_inset
+
+ , but for integrability we need 
+\begin_inset Formula $m/2>1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Gamma(z)=(z-1)\Gamma(z-1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{E}_{\theta}\left(\frac{1}{\left\Vert X\right\Vert }\right)=\mathbb{E}_{\theta}\left(\mathbb{E}_{\theta}(\frac{1}{\left\Vert X\right\Vert }\vert k)\right)=\mathbb{E}_{\theta}\left(\frac{1}{p+2k-2}\right)=e^{-\left\Vert \theta\right\Vert ^{2}/2}\sum_{r=0}^{\infty}\frac{1}{p+2r-2}\frac{\left\Vert \theta\right\Vert ^{2r}}{2^{r}r!}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+11) sorta like repeating the same calculations for Stein's lemma ...
+\end_layout
+
+\begin_layout Standard
+12) reminder that Bayes estimators are essentially admissable.
+ Bayes estimator minimizes the expected posterior loss.
+ 
+\begin_inset Formula \begin{eqnarray*}
+r_{\pi}\left(\hat{\theta}\right) & = & \int_{\mathbb{R}^{d}}\int_{\mathbb{R}^{d}}\left\Vert \hat{\theta}-\theta\right\Vert ^{2}\phi(x-\theta)dx\pi(\theta)d\theta\\
+ & = & \int_{\mathbb{R}^{d}}\int_{\mathbb{R}^{d}}\left\Vert \hat{\theta}-\theta\right\Vert ^{2}\pi_{\theta\vert X}(\theta\vert X=x)d\theta f(x)dx\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so for each x, we can choose 
+\begin_inset Formula $\hat{\theta}(x)$
+\end_inset
+
+ to minimize 
+\begin_inset Formula $\int\left\Vert \hat{\theta}-\theta\right\Vert ^{2}\pi_{\theta\vert X}(\theta\vert X=x)d\theta$
+\end_inset
+
+, which is the expected posterior loss.
+ In this case, the minimiser is the posterior mean, so 
+\begin_inset Formula \begin{eqnarray*}
+\hat{\theta}_{j}^{B} & = & \int_{\mathbb{R}^{d}}\theta_{j}\pi_{\theta\vert X}(\theta\vert X=x)d\theta\\
+ & = & \int_{\mathbb{R}^{d}}\left\{ X_{j}+\left(\theta_{j}-X_{j}\right)\right\} \pi_{\theta\vert X}(\theta\vert X=x)d\theta\\
+ & = & X_{j}+\int_{\mathbb{R}^{d}}\left(\theta_{j}-X_{j}\right)\pi_{\theta\vert X}(\theta\vert X=x)d\theta\\
+ & = & X_{j}+\frac{f_{j}(X)}{f(X)}\end{eqnarray*}
+
+\end_inset
+
+Hence
+\begin_inset Formula \[
+R\left(\hat{\theta}^{B},\theta\right)=p+\mathbb{E}_{\theta}\]
+
+\end_inset
+
+....
+ use quotient rule
+\end_layout
+
+\begin_layout Section*
+Dec 1st 2009
+\end_layout
+
+\begin_layout Subparagraph*
+8.
+ Multiple testing
+\end_layout
+
+\begin_layout Standard
+In many modern applications we may be interested in testing many hypotheses
+ simultaneously.
+ For instance, the problem of identifying the non-zero components of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ in the previous sections may be regarded as a multiple testing problem.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose we are interested in testing null hypotheses 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+, ..., 
+\begin_inset Formula $H_{m}$
+\end_inset
+
+ of which 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ are true, and 
+\begin_inset Formula $m-m_{0}$
+\end_inset
+
+ are not.
+ In this section, we do not mention alternative hypotheses explicitly.
+ Consider the following contingency table
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Claimed non-significant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Claimed significant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+True null hypothesis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{00}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{01}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+False null hypothesis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m-m_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m-R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The family-wise error rate (FWER) is defined by 
+\begin_inset Formula $FWER=\mathbb{P}(N_{01}\geq1)$
+\end_inset
+
+.
+ Traditional approaches to multiple testing have sought to control the FWER
+ at level 
+\begin_inset Formula $\alpha$
+\end_inset
+
+; i.e.
+ find a procedure with FWER
+\begin_inset Formula $\leq\alpha$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+, ..., 
+\begin_inset Formula $P_{m}$
+\end_inset
+
+ are 
+\begin_inset Formula $p$
+\end_inset
+
+-values associated with 
+\begin_inset Formula $H_{1},..$
+\end_inset
+
+, 
+\begin_inset Formula $H_{m}$
+\end_inset
+
+ the 
+\bar under
+Bonferroni correction
+\bar default
+ rejects 
+\begin_inset Formula $H_{i}$
+\end_inset
+
+ if 
+\begin_inset Formula $P_{i}\leq\alpha/m$
+\end_inset
+
+.
+ Suppose WLOG that 
+\begin_inset Formula $H_{1},..,H_{m_{0}}$
+\end_inset
+
+are the true null hypotheses, and also assume that the test statistics correspon
+ding to 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+, ...
+\begin_inset Formula $P_{m_{0}}$
+\end_inset
+
+ have continuous distribution functions, so 
+\begin_inset Formula $P_{i}\text{\textasciitilde}U(0,\,1)$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,...m_{0}$
+\end_inset
+
+.
+ Then the Bonferroni correction controls the FWER at level 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ because
+\begin_inset Formula $\mathbb{P}\left(N_{01}\geq1\right)=\mathbb{P}\left(\bigcup\left\{ P_{i}\leq\frac{\alpha}{m}\right\} \right)\leq\sum_{i=1}^{m_{0}}\mathbb{P}\left(P_{i}\leq\frac{\alpha}{m}\right)=\frac{\alpha m_{0}}{m}\leq\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a very conservative procedure with low power.
+ In many applications, an overall conclusion (about the effectiveness of
+ a treatment for instance) may not be invalidated if only a small number
+ of true null hypotheses are rejected.
+ Benjamini and Hochberg (1995) defined the 
+\bar under
+False Discovery Proportion
+\bar default
+ (FDP) by 
+\begin_inset Formula \[
+FDP=\frac{N_{01}}{\max(R,\,1)}\]
+
+\end_inset
+
+, and the 
+\bar under
+False Discovery Rate
+\bar default
+ by 
+\begin_inset Formula $FDR=\mathbb{E}\left(FDP\right)$
+\end_inset
+
+.
+ By analogy, a procedure 
+\bar under
+controls the FDR at level 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ 
+\bar default
+if 
+\begin_inset Formula $FDR\leq\alpha$
+\end_inset
+
+.
+ Benjamini and Hochberg ordered the 
+\begin_inset Formula $p$
+\end_inset
+
+-values as 
+\begin_inset Formula $P_{(1)}\leq...\leq P_{(m)}$
+\end_inset
+
+, defined 
+\begin_inset Formula $k=\max\left\{ i:\, P_{(i)}\leq\frac{i\alpha}{m}\right\} $
+\end_inset
+
+ and proposed to reject 
+\begin_inset Formula $H_{(1)}$
+\end_inset
+
+, ..
+ 
+\begin_inset Formula $H_{(k)}$
+\end_inset
+
+ where 
+\begin_inset Formula $H_{(1)},...,H_{(k)}$
+\end_inset
+
+ where 
+\begin_inset Formula $H_{(i)}$
+\end_inset
+
+ is the hypothesis corresponding to the 
+\begin_inset Formula $p$
+\end_inset
+
+-value 
+\begin_inset Formula $P_{(i)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+[committee that talks about red papers, a red paper for this retroactive
+ this year] 
+\end_layout
+
+\begin_layout Standard
+(Recall that if X has cts df 
+\begin_inset Formula $F$
+\end_inset
+
+ , then 
+\begin_inset Formula $F(X)\sim U(0,1)$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Theorem*
+Suppose 
+\begin_inset Formula $P_{1},..,P_{m_{0}}$
+\end_inset
+
+ are independent 
+\begin_inset Formula $U(0,1)$
+\end_inset
+
+ random variables, independent of 
+\begin_inset Formula $\left\{ P_{m_{0}+1},...,P_{m}\right\} $
+\end_inset
+
+.
+ Then the Benjanimi-Hochberg procedure controls the FDR at level 
+\begin_inset Formula $\alpha$
+\end_inset
+
+; in fact 
+\begin_inset Formula $FDR=\frac{\alpha m_{0}}{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $R^{(1)}$
+\end_inset
+
+ denote the number of rejections we get by applying a modified Benjamini-Hochber
+g procedure to 
+\begin_inset Formula $P^{(1)}=\left\{ P_{2},...,P_{m}\right\} $
+\end_inset
+
+ with cutoff 
+\begin_inset Formula $k=\max\left\{ i:P_{i}^{(1)}\leq\frac{\alpha\left(i+1\right)}{m}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Now for 
+\begin_inset Formula $r=1,...,m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula \begin{eqnarray*}
+\left\{ P_{1}\leq\frac{r\alpha}{m},\, R=r\right\}  & = & \left\{ P\leq\frac{\alpha r}{m},\, P_{(r)}\leq\frac{\alpha r}{m},\, P_{(s)}>\frac{\alpha s}{m}\forall s>r\right\} \\
+ & = & \left\{ P_{1}\leq\frac{\alpha r}{m},\, P_{r-1}^{(1)}\leq\frac{\alpha r}{m},\, P_{s-1}^{(1)}>\frac{\alpha s}{m},\,\forall s>r\right\} \\
+ & = & \left\{ P_{1}\leq\frac{\alpha r}{m},\, R^{(1)}=r-1\right\} \end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+It follows that
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula \begin{eqnarray*}
+FDR & = & \mathbb{E}(FDP)=\mathbb{E}\left(\frac{N_{01}}{\max(R,1)}\right)=\sum_{r=1}^{m}\mathbb{E}\left(\frac{N_{0}}{r}\mathbf{1}_{\left\{ R=r\right\} }\right)\\
+ & = & \sum_{r=1}^{m}\frac{1}{r}\mathbb{E}\left(\sum_{s=1}^{m_{0}}\mathbf{1}_{\left\{ P_{s}\leq\frac{\alpha r}{m}\right\} }\mathbf{1}_{\left\{ R=r\right\} }\right)\\
+ & = & \sum_{r=1}^{m}\frac{m_{0}}{r}\mathbb{P}\left(P_{1}\leq\frac{\alpha r}{m},\, R=r\right)\\
+ & = & \sum_{r=1}^{m}\frac{m_{0}}{r}\mathbb{P}\left(P_{1}\leq\frac{\alpha r}{m}\right)\mathbb{P}\left(R^{(1)}=r-1\right)\\
+ & = & \sum_{r=1}^{m}\frac{\alpha m_{0}}{m}\mathbb{P}\left(R^{(1)}=r-1\right)\\
+ & = & \alpha m_{0}/m\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+A great deal of current research is focused on weakening the restrictive
+ independence assumptions, studying the false non-discovery rate, and so
+ on.
+ 
+\end_layout
+
+\end_body
+\end_document
